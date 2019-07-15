@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>zero.deathlog</groupId>
     <artifactId>DeathLog</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <name>DeathLog</name>
     <description>Spigot plugin to print the coordinates of where players died in the console</description>

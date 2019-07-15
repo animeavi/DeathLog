@@ -1,8 +1,8 @@
 package zero.deathlog;
 
 import java.io.File;
+import java.util.logging.Logger;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -16,20 +16,22 @@ public class DeathLog extends JavaPlugin {
    PluginDescriptionFile pdffile = this.getDescription();
    public String version;
    public String name;
+   public Logger log;
 
    public DeathLog() {
       this.version = this.pdffile.getVersion();
       this.name = this.pdffile.getName();
+      this.log = getLogger();
    }
 
    public void onEnable() {
-      Bukkit.getConsoleSender().sendMessage("[" + this.name + "] " + "plugin enabled");
+      log.info("plugin enabled");
       this.registerEvents();
       this.registerConfig();
    }
 
    public void onDisable() {
-      Bukkit.getConsoleSender().sendMessage("[" + this.name + "] " + "plugin disabled");
+      log.info("plugin disabled");
    }
 
    public void registerEvents() {

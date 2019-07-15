@@ -1,6 +1,5 @@
 package zero.deathlog.events;
 
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
@@ -24,8 +23,7 @@ public class OnDeath implements Listener {
       Player player = event.getEntity();
       Location loc = event.getEntity().getLocation();
 
-      Bukkit.getConsoleSender().sendMessage("[" + plugin.name + "] " +
-            plugin.generateMessage(config.getString("log-message"), loc, player));
+      plugin.log.info(plugin.generateMessage(config.getString("log-message"), loc, player));
 
       if (config.getBoolean("player-chat.enabled", false)) {
          if (player != null && player.isOnline()) {
