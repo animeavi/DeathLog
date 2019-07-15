@@ -1,0 +1,11 @@
+# %player% - Name of the player who died
+# %coord-x% - X coord of where the player died
+# %coord-y% - Y coord of where the player died
+# %coord-z% - Z coord of where the player died
+# %world% - World in which the player died
+log-message: "%player% died at %coord-x%/%coord-y%/%coord-z% [World: %world%]"
+
+# Enable this to also send a message to the player upon death
+player-chat:
+    enabled: false
+    message: "You died at &3%coord-x%/%coord-y%/%coord-z% &r[World: &3%world%&r]"
